@@ -18,7 +18,7 @@ async function Home() {
       {posts.map((post) => (
         <BlogSummaryCard
           key={crypto.randomUUID()}
-          slug={posts.slug}
+          slug={post.slug}
           title={post.title}
           abstract={post.abstract}
           publishedOn={post.publishedOn}
