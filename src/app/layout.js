@@ -25,7 +25,6 @@ const monoFont = Spline_Sans_Mono({
 
 function RootLayout({ children }) {
   const savedTheme = cookies().get(COLOR_THEME_COOKIE_NAME);
-  // TODO: Dynamic theme depending on user preference
   const theme = savedTheme?.value || "light";
 
   return (

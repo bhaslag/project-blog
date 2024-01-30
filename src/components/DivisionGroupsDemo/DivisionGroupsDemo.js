@@ -3,7 +3,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import { range } from "@/utils";
+import { range } from "@/utils/range";
 import Card from "@/components/Card";
 import SliderControl from "@/components/SliderControl";
 
@@ -65,7 +65,7 @@ function DivisionGroupsDemo({
                     <motion.div
                       key={layoutId}
                       className={styles.item}
-                      layoutId = {layoutId}
+                      layoutId={layoutId}
                     />
                   );
                 })}
@@ -78,16 +78,18 @@ function DivisionGroupsDemo({
           <div className={styles.remainderArea}>
             <p className={styles.remainderHeading}>Remainder Area</p>
 
-            {range(totalNumOfGroups, numOfItems).reverse().map((index) => {
-              const layoutId = `${id}-${index}`;
-              return (
-                <motion.div
-                  key={layoutId}
-                  className={styles.item}
-                  layoutId={layoutId}
-                />
-              );
-            })}
+            {range(totalNumOfGroups, numOfItems)
+              .reverse()
+              .map((index) => {
+                const layoutId = `${id}-${index}`;
+                return (
+                  <motion.div
+                    key={layoutId}
+                    className={styles.item}
+                    layoutId={layoutId}
+                  />
+                );
+              })}
           </div>
         )}
 
